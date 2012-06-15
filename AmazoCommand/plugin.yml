@@ -1,0 +1,28 @@
+name: AmazoCommand
+main: com.nyverdenproduction.AmazoCommand.AmazoCommand
+version: 0.01
+description: Command limiter for Amazocraft.net
+authors:
+  - Mitsugaru
+depend: [Vault]
+commands:
+    acom:
+        description: Root command for AmazoCommand
+        usage: /ac ? - Show help on AmazoCommand
+permissions:
+    AmazoCommand.*:
+        description: Gives access to all AmazoCreative permission nodes
+        children:
+            AmazoCommand.admin.reload: true
+            AmazoCommand.ignore: true
+    AmazoCommand.admin.*:
+        description: Administrate the plugin
+        default: op
+        children:
+            AmazoCommand.admin.reload: true
+    AmazoCommand.admin.reload:
+        description: Reload plugin configuration
+        default: op
+    AmazoCommand.exempt:
+        description: Player exempt from the limiter.
+        default: op
